@@ -1,7 +1,11 @@
-#!/bin/bash
+version: 0.2
 
-# Navigate to the application directory
-cd /home/ubuntu/nodeapp
-
-# Build the Docker image
-docker build -t myapp:latest .
+phases:
+  build:
+    commands:
+      - name: Install dependencies
+        command: npm install
+      - name: Build Docker image
+        command: docker push 207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest .
+      - name: Push Docker image to ECR
+        command: docker push 207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
