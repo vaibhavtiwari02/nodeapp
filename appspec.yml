@@ -1,16 +1,8 @@
 version: 0.0
 os: linux
-files:
-  - source: /
-    destination: /home/ubuntu/nodeapp
 
 hooks:
-  AfterInstall:
-    - location: scripts/build.sh
-      timeout: 120
-      runas: root
-
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: scripts/start-process.sh
       timeout: 120
       runas: root
