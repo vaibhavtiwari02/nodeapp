@@ -3,7 +3,7 @@ os: linux
 
 hooks:
   ApplicationStop:
-    - location: scripts/after_install.sh
+    - location: scripts/application-stop.sh
       timeout: 120
       runas: root
   ApplicationStart:
