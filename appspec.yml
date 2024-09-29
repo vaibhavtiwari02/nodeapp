@@ -3,6 +3,10 @@ os: linux
 
 hooks:
   ApplicationStart:
+    - location: after_install.sh
+      timeout: 120
+      runas: root
+  ApplicationStart:
     - location: scripts/start-process.sh
       timeout: 120
       runas: root
