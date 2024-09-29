@@ -3,9 +3,6 @@ version: 0.2
 phases:
   build:
     commands:
-      - name: Install dependencies
-        command: npm install
-      - name: Build Docker image
-        command: docker build -t 207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest .
-      - name: Push Docker image to ECR
-        command: docker push 207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
+      - npm install  # Install dependencies
+      - docker build -t 207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest .  # Build Docker image
+      - docker push 207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest  # Push Docker image to ECR
