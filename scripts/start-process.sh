@@ -13,4 +13,4 @@ docker pull 207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
 docker rm -f $container_name
 
 # Creating and starting a docker container using a new image
-docker run -d -p 3000:3000 --name $container_name  207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
+docker run -d -p 3000:3000 --name $container_name 207567793991.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
