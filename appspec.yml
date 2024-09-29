@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 
 hooks:
-  ApplicationStart:
+  ApplicationStop:
     - location: after_install.sh
       timeout: 120
       runas: root
