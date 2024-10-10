@@ -20,5 +20,4 @@ phases:
       - docker push 149536475906.dkr.ecr.ap-south-1.amazonaws.com/testnode:latest
 
 artifacts:
-  files:
-    - '**/*'
+  files: imagedefinition.json
