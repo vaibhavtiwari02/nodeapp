@@ -14,7 +14,7 @@ phases:
       - docker build -t testnode .
       - docker tag testnode:latest 149536475906.dkr.ecr.ap-south-1.amazonaws.com/testnode:latest
       - echo Creating imagedefinitions.json...
-      - echo '[{"name":"testnode","imageUri":"149536475906.dkr.ecr.ap-south-1.amazonaws.com/testnode:latest"}]' > imagedefinition.json
+      - echo '[{"name":"vaibav-ec2","imageUri":"149536475906.dkr.ecr.ap-south-1.amazonaws.com/testnode:latest"}]' > imagedefinition.json
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
