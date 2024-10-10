@@ -21,4 +21,5 @@ phases:
 
 artifacts:
   files:
-    - imagedefinitions.json
+    - '**/*'
+    - 'imagedefinition.json'
