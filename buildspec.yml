@@ -11,14 +11,14 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t testnode .
-      - docker tag testnode:latest 149536475906.dkr.ecr.ap-south-1.amazonaws.com/testnode:latest
+      - docker build -t vt-node .
+      - docker tag vt-node:latest 381492299588.dkr.ecr.us-east-1.amazonaws.com/vt-node:latest
       - echo Creating imagedefinitions.json...
-      - echo '[{"name":"testnode","imageUri":"149536475906.dkr.ecr.ap-south-1.amazonaws.com/testnode:latest"}]' > imagedefinition.json
+      - echo '[{"name":"vt-node","imageUri":"381492299588.dkr.ecr.us-east-1.amazonaws.com/vt-node:latest"}]' > imagedefinition.json
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
-      - docker push 149536475906.dkr.ecr.ap-south-1.amazonaws.com/testnode:latest
+      - docker push 381492299588.dkr.ecr.us-east-1.amazonaws.com/vt-node:latest
       - echo Docker image pushed to ECR successfully!
       - echo Updating ECS service...
     
