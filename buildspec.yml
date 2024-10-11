@@ -7,22 +7,22 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 149536475906.dkr.ecr.ap-south-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 381492299588.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Building the Docker image...
       - docker build -t vt-node .
       - docker tag vt-node:latest 381492299588.dkr.ecr.us-east-1.amazonaws.com/vt-node:latest
       - echo Creating imagedefinitions.json...
-      - echo '[{"name":"vt-node","imageUri":"381492299588.dkr.ecr.us-east-1.amazonaws.com/vt-node:latest"}]' > imagedefinition.json
+      - echo '[{"name":"vt-node","imageUri":"381492299588.dkr.ecr.us-east-1.amazonaws.com/vt-node:latest"}]' > imagedefinitions.json
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
       - docker push 381492299588.dkr.ecr.us-east-1.amazonaws.com/vt-node:latest
       - echo Docker image pushed to ECR successfully!
-      - echo Updating ECS service...
-    
+      # Uncomment and modify the following line if you want to update ECS service here.
+      # aws ecs update-service --cluster <your-cluster-name> --service <your-service-name> --force-new-deployment
 
 artifacts:
   files:
-    - imagedefinition.json
+    - imagedefinitions.json
